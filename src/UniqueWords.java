@@ -25,6 +25,18 @@ public class UniqueWords {
         }
     }
     public void addUniqueWordsToAVL() {
+        String words = book.getWords().first();
+        MyAVLTree<String> uniqueWords = new MyAVLTree<>();
+        while (words != null) {
+            if (!uniqueWords.contains(words)) {
+                if (uniqueWords.isEmpty()) {
+                    uniqueWords.add(words);
+                } else {
+                    uniqueWords.add(words);
+                }
+            }
+            words = book.getWords().next();
+        }
     }
     public static void main(String[] args) throws IOException {
         new UniqueWords();
